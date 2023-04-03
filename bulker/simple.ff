@@ -1,0 +1,55 @@
+\x09
+  \x05examples\x06: \x07
+    \x09
+      \x05tag_name\x06: \x03a\x04,
+      \x05attr\x06: \x07
+        \x09
+          \x05key\x06: \x03href\x04,
+          \x05value\x06: \x03http://amir.saboury.net\x04
+        \x0A,
+       \x09
+          \x05key\x06: \x03target\x04,
+          \x05value\x06: \x03_blank\x04
+        \x0A
+      \x08
+    \x0A,
+   \x09
+      \x05this_is\x06: \x07
+        \x03array\x04,
+        \x03of\x04,
+        \x03strings\x04
+      \x08,
+      \x05number_array\x06: \x07
+        \x0B1\x0C,
+        \x0B2\x0C,
+        \x0B4\x0C,
+        \x0B8\x0C,
+        \x0B16\x0C
+      \x08,
+      \x05pie\x06: \x0B3.14\x0C,
+      \x05boolean\x06: \x01,
+      \x05bug\x06: \x00,
+      \x05mixed\x06: \x07
+        \x0B1\x0C,
+        \x0B2\x0C,
+        \x09
+          \x05test1\x06: -1.2345,
+          \x05test2\x06: \x00
+        \x0A,
+        \x0B\x08,
+        \x0B0.4\x0C,
+        \x07
+          \x03nested\x04,
+          \x07
+            \x03array\x04,
+            \x01
+          \x08
+        \x08,
+        \x03end of story!\x04
+      \x08
+    \x0A,
+    \x09
+      \x05done\x06: \x01
+    \x0A
+  \x08
+\x0A

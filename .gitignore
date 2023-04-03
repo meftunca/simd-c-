@@ -1,0 +1,7 @@
+include/
+conan_simd/
+fdo/
+bazel-*/
+.trunk
+.cache
+.cache/**

@@ -1,0 +1,38 @@
+--------------------------------------------------------------------------------
+Command:            bazel-bin/benchmark/benchmark --benchmark_format=console --benchmark_counters_tabular=true --benchmark_out=benchmark/benchmark__.json --benchmark_out_format=json
+Massif arguments:   (none)
+ms_print arguments: massif.out.15648 massif.out.16062
+--------------------------------------------------------------------------------
+
+
+     B
+    1^                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+     |                                                                        
+   0 +----------------------------------------------------------------------->i
+     0                                                                       1
+
+Number of snapshots: 1
+ Detailed snapshots: []
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0

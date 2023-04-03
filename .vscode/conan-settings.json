@@ -1,0 +1,24 @@
+{
+    "profiles": [
+        {
+            "name": "json-debug",
+            "conanFile": "${workspaceFolder}/conanfile.py",
+            "profile": "debug",
+            "installArg": "",
+            "buildArg": "",
+            "createUser": "disroop",
+            "createChannel": "development",
+            "createArg": ""
+        },
+        {
+            "name": "json",
+            "conanFile": "${workspaceFolder}/conanfile.py",
+            "profile": "default",
+            "installArg": "",
+            "buildArg": "",
+            "createUser": "disroop",
+            "createChannel": "development",
+            "createArg": ""
+        }
+    ]
+}

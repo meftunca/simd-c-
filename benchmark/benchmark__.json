@@ -1,0 +1,108 @@
+{
+  "context": {
+    "date": "2023-03-27T02:05:17+03:00",
+    "host_name": "MacBook-Pro.local",
+    "executable": "bazel-bin/benchmark/benchmark",
+    "num_cpus": 12,
+    "mhz_per_cpu": 2600,
+    "cpu_scaling_enabled": false,
+    "caches": [
+      {
+        "type": "Data",
+        "level": 1,
+        "size": 32768,
+        "num_sharing": 0
+      },
+      {
+        "type": "Instruction",
+        "level": 1,
+        "size": 32768,
+        "num_sharing": 0
+      },
+      {
+        "type": "Unified",
+        "level": 2,
+        "size": 262144,
+        "num_sharing": 2
+      },
+      {
+        "type": "Unified",
+        "level": 3,
+        "size": 12582912,
+        "num_sharing": 0
+      }
+    ],
+    "load_avg": [5.86572,4.58301,4.71826],
+    "library_build_type": "release"
+  },
+  "benchmarks": [
+    {
+      "name": "Standart atan2 Benchmark",
+      "family_index": 0,
+      "per_family_instance_index": 0,
+      "run_name": "Standart atan2 Benchmark",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 67222372,
+      "real_time": 1.0350111581888036e+01,
+      "cpu_time": 1.0306018359483058e+01,
+      "time_unit": "ns",
+      "FileSize": 8.0000000000000000e+00,
+      "bytes_per_second": 7.7624546366529787e+08,
+      "items_per_second": 7.7624546366529787e+08
+    },
+    {
+      "name": "Standart sqrt Benchmark",
+      "family_index": 1,
+      "per_family_instance_index": 0,
+      "run_name": "Standart sqrt Benchmark",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 68426197,
+      "real_time": 1.0325182809731565e+01,
+      "cpu_time": 1.0285388211769245e+01,
+      "time_unit": "ns",
+      "FileSize": 8.0000000000000000e+00,
+      "bytes_per_second": 7.7780243538555515e+08,
+      "items_per_second": 7.7780243538555515e+08
+    },
+    {
+      "name": "Standart eveAtan2 Benchmark",
+      "family_index": 2,
+      "per_family_instance_index": 0,
+      "run_name": "Standart eveAtan2 Benchmark",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1000000000,
+      "real_time": 1.3320004654815421e-06,
+      "cpu_time": 2.0000000000575113e-06,
+      "time_unit": "ns",
+      "FileSize": 1.6000000000000000e+01,
+      "bytes_per_second": 7.9999999997699550e+15,
+      "items_per_second": 7.9999999997699550e+15
+    },
+    {
+      "name": "Standart eveSqrt Benchmark",
+      "family_index": 3,
+      "per_family_instance_index": 0,
+      "run_name": "Standart eveSqrt Benchmark",
+      "run_type": "iteration",
+      "repetitions": 1,
+      "repetition_index": 0,
+      "threads": 1,
+      "iterations": 1000000000,
+      "real_time": 1.3139997463440523e-06,
+      "cpu_time": 0.0000000000000000e+00,
+      "time_unit": "ns",
+      "FileSize": 8.0000000000000000e+00,
+      "bytes_per_second": Infinity,
+      "items_per_second": Infinity
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "initial",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "compileCommands": "${workspaceFolder}/compile_commands.json",
+            "macFrameworkPath": [],
+            "intelliSenseMode": "clang-x64",
+            "cppStandard": "c++20",
+            "cStandard": "c17",
+            "compilerArgs": [
+                "-stdlib=libc++",
+                "-std=c++20"
+            ],
+            "compilerPath": "/usr/local/opt/llvm/bin/clang++",
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "mergeConfigurations": false
+        }
+    ],
+    "version": 4
+}

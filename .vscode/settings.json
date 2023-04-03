@@ -1,0 +1,48 @@
+{
+  "bazel-cpp-tools.compileCommands.targets": [
+    // ! Externals
+    // ! Testing
+    "//tests:testing",
+    // ! Benchmark
+    "//benchmark:benchmark",
+    "//fastContains:fast_contains",
+    // "//eve:eve",
+    // ! Sources
+    "//src:simd"
+  ],
+  "CMAKE_TOOLCHAIN_FILE": "$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake",
+  "bsv.bazel.testFlags": [],
+  "bsv.bzl.lsp.enableCodelensTest": true,
+  "lldb.displayFormat": "auto",
+  "lldb.dereferencePointers": true,
+  "lldb.showDisassembly": "auto",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "googletest.failed",
+        "settings": {
+          "foreground": "#f00"
+        }
+      },
+      {
+        "scope": "googletest.passed",
+        "settings": {
+          "foreground": "#0f0"
+        }
+      },
+      {
+        "scope": "googletest.run",
+        "settings": {
+          "foreground": "#0f0"
+        }
+      }
+    ]
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "*.json": "json",
+    "*.md": "mdx",
+    "*.mdx": "mdx",
+    "variant": "cpp"
+  }
+}
