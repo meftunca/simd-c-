@@ -1,8 +1,0 @@
-Package: gperftools
-Version: 2.10
-Port-Version: 1
-Architecture: x64-osx
-Multi-Arch: same
-Abi: 167897da59c1d2e65b983c23215b93a8e3c3f43e9a4615f342c6ee8ed3fa80af
-Description: A set of tools for performance profiling and memory checking
-Status: install ok half-installed

@@ -1,8 +1,0 @@
-Package: taskflow
-Version: 3.6.0
-Depends: vcpkg-cmake:arm64-osx, vcpkg-cmake-config:arm64-osx
-Architecture: x64-osx
-Multi-Arch: same
-Abi: 8858a3592c2fffc773b0fbd6f09f36091e1aa276512bf89a5781f1a39a57bef6
-Description: Fast Parallel Tasking Programming Library using Modern C++
-Status: install ok installed

@@ -1,6 +1,0 @@
-Package: simdjson
-Feature: utf8-validation
-Architecture: arm64-osx
-Multi-Arch: same
-Description: Enable UTF-8 validation
-Status: purge ok not-installed

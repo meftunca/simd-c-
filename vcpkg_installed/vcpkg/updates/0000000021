@@ -1,8 +1,0 @@
-Package: eve
-Version: 2023.2.15
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: arm64-osx
-Multi-Arch: same
-Abi: 8291f0484c77881752c5e3959c87ec11afd34d99bd95f040aa5e7cfd245f7f87
-Description: EVE - the Expressive Vector Engine : C++20 SIMD Programming Library
-Status: purge ok not-installed

@@ -1,6 +1,0 @@
-Package: simdjson
-Feature: threads
-Architecture: arm64-osx
-Multi-Arch: same
-Description: Link with thread support
-Status: purge ok not-installed

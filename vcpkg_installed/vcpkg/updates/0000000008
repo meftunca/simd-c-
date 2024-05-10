@@ -1,6 +1,0 @@
-Package: simdjson
-Feature: deprecated
-Architecture: arm64-osx
-Multi-Arch: same
-Description: Enable deprecated APIs
-Status: purge ok half-installed

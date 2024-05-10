@@ -1,9 +1,0 @@
-Package: simdjson
-Version: 3.8.0
-Depends: vcpkg-cmake:arm64-osx, vcpkg-cmake-config:arm64-osx
-Architecture: x64-osx
-Multi-Arch: same
-Abi: 73bb0ba300a23501b44775dbeb22963ce9068b3a2be0c96be5d9df2b9713e653
-Description: An extremely fast JSON library that can parse gigabytes of JSON per second
-Default-Features: deprecated, exceptions, threads, utf8-validation
-Status: install ok installed
