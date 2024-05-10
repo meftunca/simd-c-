@@ -1,0 +1,132 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/gperftools-x64-osx-2.10#1-ada014b9-ca29-456e-bb2a-0f5076bcb2da",
+  "name": "gperftools:x64-osx@2.10#1 167897da59c1d2e65b983c23215b93a8e3c3f43e9a4615f342c6ee8ed3fa80af",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024.03.14"
+    ],
+    "created": "2024-05-03T10:20:05Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-2",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "gperftools",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "2.10#1",
+      "downloadLocation": "git+https://github.com/microsoft/vcpkg@ebb8ef920067346d4633cc78ee176f7ed9bc89d4",
+      "homepage": "https://github.com/gperftools/gperftools",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "A set of tools for performance profiling and memory checking",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "gperftools:x64-osx",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "167897da59c1d2e65b983c23215b93a8e3c3f43e9a4615f342c6ee8ed3fa80af",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "gperftools/gperftools",
+      "downloadLocation": "git+https://github.com/gperftools/gperftools@gperftools-2.10",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "4400711723be9401f519d85b3b69c026e4715473cbed48ab0573df17abdf895fb971ee969875fe5127a2e8b9aba90d858285e50c8e012384c2c36d5a76b1f0c4"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/ebb8ef920067346d4633cc78ee176f7ed9bc89d4/CMakeLists.txt",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "26aa97d946916539440b23d34ffad16aeb17942559b56e8265fe07c5b9118046"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/ebb8ef920067346d4633cc78ee176f7ed9bc89d4/portfile.cmake",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a973480bd05d81df5dabeedc273abeef2a328e1fbad25b172cb28e4a7f96e7a6"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/ebb8ef920067346d4633cc78ee176f7ed9bc89d4/vcpkg.json",
+      "SPDXID": "SPDXRef-file-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b05848807fde598b8ab58ea4a16c91670d76ae59d06f149c5728dd332e0d81a6"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

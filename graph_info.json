@@ -1,0 +1,42 @@
+{
+ "options": [
+  [
+   "lz4:fPIC",
+   "True"
+  ],
+  [
+   "lz4:shared",
+   "False"
+  ],
+  [
+   "yyjson:fPIC",
+   "True"
+  ],
+  [
+   "yyjson:shared",
+   "False"
+  ],
+  [
+   "yyjson:with_utf8_validation",
+   "True"
+  ],
+  [
+   "zstd:fPIC",
+   "True"
+  ],
+  [
+   "zstd:shared",
+   "False"
+  ],
+  [
+   "zstd:threading",
+   "True"
+  ]
+ ],
+ "root": {
+  "name": "SONDB",
+  "version": null,
+  "user": null,
+  "channel": null
+ }
+}

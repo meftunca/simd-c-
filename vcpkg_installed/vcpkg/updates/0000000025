@@ -1,0 +1,7 @@
+Package: vcpkg-cmake-config
+Version: 2022-02-06
+Port-Version: 1
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: db3ec1f464f74626f46246755383978c40dd7509eff9bf5054dcfb797f8c265f
+Status: purge ok not-installed

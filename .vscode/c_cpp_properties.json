@@ -7,18 +7,19 @@
             ],
             "compileCommands": "${workspaceFolder}/compile_commands.json",
             "macFrameworkPath": [],
-            "intelliSenseMode": "clang-x64",
-            "cppStandard": "c++20",
+            "intelliSenseMode": "${default}",
+            "cppStandard": "c++23",
             "cStandard": "c17",
             "compilerArgs": [
                 "-stdlib=libc++",
-                "-std=c++20"
+                "-std=c++2b"
             ],
-            "compilerPath": "/usr/local/opt/llvm/bin/clang++",
+            "compilerPath": "/usr/bin/clang++",
             "browse": {
                 "limitSymbolsToIncludedHeaders": true
             },
-            "mergeConfigurations": false
+            "mergeConfigurations": false,
+            "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
     "version": 4

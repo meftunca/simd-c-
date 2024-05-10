@@ -8,7 +8,7 @@
       "type": "cppdbg",
       "request": "launch",
       "name": "Test",
-      "program": "${workspaceFolder}/bazel-bin/src/simd_out",
+      "program": "${workspaceFolder}/bazel-bin/tests/testing",
       "args": [],
       "stopAtEntry": true,
       "cwd": "${workspaceFolder}",
@@ -22,6 +22,14 @@
       "request": "launch",
       "name": "Launch a bazel starlark debug session",
       "targetLabel": "${workspaceFolder}/${command:AskForDebugTargetLabel}"
+    },
+    {
+      "type": "cmake",
+      "request": "launch",
+      "name": "Debug portfile(s)",
+      "cmakeDebugType": "external",
+      "pipeName": "/tmp/vcpkg_ext_portfile_dbg",
+      "preLaunchTask": "Debug vcpkg commands"
     }
   ]
 }

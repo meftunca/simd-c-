@@ -1,33 +1,38 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary")
-package(default_visibility = ["//visibility:public"])
 
+package(default_visibility = ["//visibility:public"])
 
 cc_binary(
     name = "benchmark",
-    srcs = glob(["*.cc","**/*.cc"]),
+    srcs = glob([
+        "*.cc",
+        "**/*.cc",
+        "*.h",
+        "**/*.h",
+    ]),
+    copts = [
+        "-O3",
+        "-DNEDBUG",
+        "-std=c++2b",
+        "-march=armv8-a",
+        "-mtune=native",
+        "-mpopcnt",
+        "-mfma",
+        "-funroll-loops",
+        "-ffast-math",
+        "-finline-functions",
+        "-ftree-vectorize",
+    ],
     deps = [
+        # "@com_github_gperftools_gperftools//:all",
         # "@benchmark",
         "@com_google_benchmark//:benchmark_main",
-        "@simdjson",
         # "@eastl",
-        "@yyjson",
-        "@nlohmann_json//:json",
-        "@eve",
-        "@lz4",
-        "@nanobench",
-        "@mio",
-        "//src:simd",
+        # "@eve",
+        # # "@sonic",
+        # "@lz4",
+        # "@mio",
+        "//src:bon_lib",
         "//fastContains:fast_contains",
     ],
-    # simd = True,
-       copts=[
-        "-O3",
-        "-mavx2",
-        "-DNEDBUG",
-        "-std=c++20",
-        "--stdlib=libc++",
-        "-ftree-vectorize",
-        ]
-    # copts =  ['-DNDEBUG','-std=c++20'],
-    # linkopts = ['-lstdc++fs'],
 )

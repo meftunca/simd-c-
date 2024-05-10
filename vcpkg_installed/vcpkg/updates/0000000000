@@ -1,0 +1,9 @@
+Package: zstd
+Version: 1.5.5
+Port-Version: 2
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: arm64-osx
+Multi-Arch: same
+Abi: 0d85c1f4dcf3e31666f1457fc5fe2babd4d2548af8c7a18bbb0af4a0bdeea754
+Description: Zstandard - Fast real-time compression algorithm
+Status: purge ok half-installed

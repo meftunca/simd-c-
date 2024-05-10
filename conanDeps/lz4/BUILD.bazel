@@ -1,0 +1,33 @@
+load("@rules_cc//cc:defs.bzl", "cc_import", "cc_library")
+
+# Components precompiled libs
+# Root package precompiled libs
+cc_import(
+    name = "lz4_precompiled",
+    static_library = "lib/liblz4.a",
+)
+
+# Components libraries declaration
+# Package library declaration
+cc_library(
+    name = "lz4",
+    hdrs = glob([
+        "include/**",
+    ]),
+    includes = [
+        "include",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":lz4_precompiled",
+    ],
+)
+
+# Filegroup library declaration
+filegroup(
+    name = "lz4_binaries",
+    srcs = glob([
+        "bin/**",
+    ]),
+    visibility = ["//visibility:public"],
+)

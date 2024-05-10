@@ -1,0 +1,6 @@
+Package: simdjson
+Feature: exceptions
+Architecture: arm64-osx
+Multi-Arch: same
+Description: Enable exception-throwing interface
+Status: purge ok not-installed

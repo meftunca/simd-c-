@@ -1,0 +1,110 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/taskflow-x64-osx-3.6.0-27c99414-5836-42bc-9e26-9d0722bed77d",
+  "name": "taskflow:x64-osx@3.6.0 8858a3592c2fffc773b0fbd6f09f36091e1aa276512bf89a5781f1a39a57bef6",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024.03.14"
+    ],
+    "created": "2024-05-03T10:20:16Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "taskflow",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "3.6.0",
+      "downloadLocation": "git+https://github.com/microsoft/vcpkg@ce89c70566c24ddbcaf7ddb1ee9dc3101c3c30e0",
+      "homepage": "https://github.com/taskflow/taskflow",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "Fast Parallel Tasking Programming Library using Modern C++",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "taskflow:x64-osx",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "8858a3592c2fffc773b0fbd6f09f36091e1aa276512bf89a5781f1a39a57bef6",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "taskflow/taskflow",
+      "downloadLocation": "git+https://github.com/taskflow/taskflow@v3.6.0",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "1bf17b69cdb29b982fc74b9091f5b6c8fc4fd3004b26afe7e73e71569738e492cf8663b71d98cfbc4e240c08ceb8a99bf51cccce95254710722f89929a4bbea8"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/ce89c70566c24ddbcaf7ddb1ee9dc3101c3c30e0/portfile.cmake",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5d820650552877a0d85aa49e6b2b888d1d7189339877410b7b1a176e8d223665"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/ce89c70566c24ddbcaf7ddb1ee9dc3101c3c30e0/vcpkg.json",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "07c20b37faa790e37c2390ba2e590be13c4c19db68966e6dea6d6e70412fa2d5"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

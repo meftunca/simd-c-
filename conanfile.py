@@ -15,7 +15,8 @@ from conan.errors import ConanException
 
 class SONDB(ConanFile):
     name = "SONDB"
-    settings =  "os", "compiler", "build_type", "arch"
+    settings = "os", "compiler", "build_type", "arch"
+    folders = {"source": "source", "build": "build", "install": "install"}
     #  build_type=RelWithDebInfo;compiler=apple-clang;compiler.version=13.1;compiler.libcxx=libc++;os.version=;arch=x86_64
     # settings = {"os": ["Linux", "Windows", "Macos"],
     #         "compiler": {"gcc": {"version": ["14"]}, "clang": {"version": ["13.1"]}, "apple-clang": {"version": ["14"]}, "Visual Studio": {"version": ["16"]}},
@@ -23,26 +24,39 @@ class SONDB(ConanFile):
     # options = {"shared": [True, False]}
     # default_options = {"shared": False}
     # "jerryscript/2.4.0", "folly/2022.01.31.00",
-    requires = "lz4/1.9.4", "zstd/1.5.4", "yyjson/0.5.1", "simdjson/3.1.1", "nlohmann_json/3.11.2", "fast_float/3.8.1", "mio/cci.20201220"
-    generators = ['BazelDeps', 'BazelToolchain']
+    requires = (
+        "lz4/1.9.4",
+        "zstd/1.5.5",
+        # "jfalcou-eve/v2023.02.15",
+        # "gperftools/2.15",
+        "yyjson/0.8.0",
+        "fast_float/5.3.0",
+        "mio/cci.20230303",
+        "taskflow/3.6.0",
+        "glaze/2.6.1",
+    )
+    generators = ["BazelDeps", "BazelToolchain"]
     os = "Macos"
     compiler = "apple-clang"
+    arch = "armv8"
+    build_type = "Release"
+
     cppstd = "20"
-    # build_requires = "cmake/3.23.2"
-    # def build(self):
-    #     self.run("cmake --version")
+
+    # should_configure = True
+    # libcxx = "libc++"
+    # compiler_version = "15"
+    compiler_cppstd = "20"
+
+    # build_requires = "cmake/3.28.2"
+    def build(self):
+        self.run("cmake --version")
+
     def configure(self):
+        self.folders.build = "conanDeps"
         # set cppstd
-        if self.settings.compiler == "apple-clang":
-            self.cppstd = "20"
-        elif self.settings.compiler == "clang":
-            self.cppstd = "20"
-        elif self.settings.compiler == "gcc":
-            self.cppstd = "20"
-        elif self.settings.compiler == "Visual Studio":
-            self.cppstd = "20"
-        else:
-            raise ConanInvalidConfiguration("Unsupported compiler")
+        self.cppstd = "20"
+
         # set os
         if self.settings.os == "Linux":
             self.os = "Linux"
@@ -54,5 +68,6 @@ class SONDB(ConanFile):
             raise ConanInvalidConfiguration("Unsupported os")
 
         pass
+
     def imports(self):
         pass

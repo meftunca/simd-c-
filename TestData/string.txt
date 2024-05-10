@@ -1,0 +1,13 @@
+"naber \"nasılsın\" iyidir"
+"naber \\nasılsın\\ iyidir"
+"naber \nnasılsın\n iyidir"
+"naber \tnasılsın\t iyidir"
+"naber \r\nnasılsın\r\n iyidir"
+"naber \bnasılsın\b iyidir"
+"naber \fnasılsın\f iyidir"
+"naber \vnasılsın\v iyidir"
+"naber \0nasılsın\0 iyidir"
+"naber \x0Bnasılsın\x0B iyidir"
+"naber \u000Bnasılsın\u000B iyidir"
+ 
+

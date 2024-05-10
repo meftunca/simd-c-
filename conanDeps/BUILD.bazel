@@ -1,0 +1,1 @@
+# This is an empty BUILD file to be able to load the dependencies.bzl one.

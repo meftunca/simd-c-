@@ -4,81 +4,71 @@
 # Change Date:
 #
 # On the date above, in accordance with the Business Source License, use of this software will be governed by the open source license specified in the LICENSE.TXT file.
-workspace(name = "simd")
+workspace(name = "bon")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 # Add Package config file
 load("//:packages.bzl", "loadPackages")
+
 loadPackages()
-# load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-# load("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
-# load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
-# # load("@//conandeps:dependencies.bzl", "load_conan_dependencies")
-# # load_conan_dependencies()
 
-# new_git_repository(
-#     name = "simdjson",
-#     branch = "master",
-#     build_file = "//:bazel_packages/simdjson.BUILD",
-#     remote = "https://github.com/simdjson/simdjson.git",
-# )
+new_local_repository(
+    name = "gperftools",
+    build_file = "bazel_packages/gperftools.BUILD",
+    path = "/opt/homebrew/Cellar/gperftools/2.13",
+)
 
 
+http_archive(
+    name = "toolchains_llvm",
+    sha256 = "e91c4361f99011a54814e1afbe5c436e0d329871146a3cd58c23a2b4afb50737",
+    strip_prefix = "toolchains_llvm-1.0.0",
+    canonical_id = "1.0.0",
+    url = "https://github.com/bazel-contrib/toolchains_llvm/releases/download/1.0.0/toolchains_llvm-1.0.0.tar.gz",
+)
 
-# new_git_repository(
-#     name = "yyjson",
-#     branch = "master",
-#     build_file = "//:bazel_packages/yyjson.BUILD",
-#     remote = "https://github.com/ibireme/yyjson.git",
-# )
+load("@toolchains_llvm//toolchain:deps.bzl", "bazel_toolchain_dependencies")
 
-# new_git_repository(
-#     name = "mio",
-#     branch = "master",
-#     build_file = "//:bazel_packages/mio.BUILD",
-#     remote = "https://github.com/mandreyel/mio.git",
-# )
+bazel_toolchain_dependencies()
 
-# new_git_repository(
-#     name = "lz4",
-#     branch = "release", #release|dev
-#     build_file = "//:bazel_packages/lz4.BUILD",
-#     remote = "https://github.com/lz4/lz4.git",
-# )
+load("@toolchains_llvm//toolchain:rules.bzl", "llvm_toolchain")
 
-# # new_git_repository(
-# #     name = "fast_float",
-# #     branch = "main",
-# #     build_file = "//:bazel_packages/fast_float.BUILD",
-# #     remote = "https://github.com/fastfloat/fast_float.git",
-# # )
-# new_git_repository(
-#     name = "eve",
-#     branch = "main",
-#     # commit = '5264e20c51aeca17675e67abf236ce1ead781c52',
-#     # shallow_since = "1677570610 +0100",
-#     # strip_prefix="include",
-#     build_file = "//:bazel_packages/eve.BUILD",
-#     remote = "https://github.com/jfalcou/eve.git",
-# )
+llvm_toolchain(
+    name = "llvm_toolchain",
+    llvm_version = "16.0.0",
+)
 
+load("@llvm_toolchain//:toolchains.bzl", "llvm_register_toolchains")
 
-# git_repository(
-#     name = "nlohmann_json",
-#     branch = "develop",
-#     # build_file = "//:bazel_packages/nlohmann_json.BUILD",
-#     remote = "https://github.com/nlohmann/json.git",
-# )
+llvm_register_toolchains()
+# llvm_register_toolchains()
 
+http_archive(
+    name = "bazel_skylib",
+    sha256 = "b8a1527901774180afc798aeb28c4634bdccf19c4d98e7bdd1ce79d1fe9aaad7",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.4.1/bazel-skylib-1.4.1.tar.gz",
+        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.4.1/bazel-skylib-1.4.1.tar.gz",
+    ],
+)
 
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
+
+# Hedron's Compile Commands Extractor for Bazel
+# https://github.com/hedronvision/bazel-compile-commands-extractor
 # http_archive(
-#     name = "com_google_googletest",
-#     urls = ["https://github.com/google/googletest/archive/refs/tags/v1.13.0.zip"],
-#     strip_prefix = "googletest-1.13.0",
+#     name = "hedron_compile_commands",
+#     strip_prefix = "bazel-compile-commands-extractor-ed994039a951b736091776d677f324b3903ef939",
 
+#     # Replace the commit hash in both places (below) with the latest, rather than using the stale one here.
+#     # Even better, set up Renovate and let it do the work for you (see "Suggestion: Updates" in the README).
+#     url = "https://github.com/hedronvision/bazel-compile-commands-extractor/archive/ed994039a951b736091776d677f324b3903ef939.tar.gz",
+#     # When you first run this tool, it'll recommend a sha256 hash to put here with a message like: "DEBUG: Rule 'hedron_compile_commands' indicated that a canonical reproducible form can be obtained by modifying arguments sha256 = ..."
 # )
 
-# http_archive(
-#     name = "com_google_benchmark",
-#     urls = ["https://github.com/google/benchmark/archive/refs/tags/v1.7.1.zip"],
-#     strip_prefix = "benchmark-1.7.1",
+# load("@hedron_compile_commands//:workspace_setup.bzl", "hedron_compile_commands_setup")
 
-# )
+# hedron_compile_commands_setup()

@@ -1,0 +1,18 @@
+{
+  "name": "bon",
+  "version": "1.0.0",
+  "description": "Bon is a high-performance, distributed, columnar, in-memory store with a SQL query interface.",
+  "homepage": "https://github.com/meftunca/bon",
+  "license": "MIT",
+  "supports": "native",
+  "dependencies": [
+    "eve",
+    "simdjson",
+    "mio",
+    "taskflow",
+    "zstd",
+    "lz4",
+    "fast-float",
+    "gperftools"
+  ]
+}

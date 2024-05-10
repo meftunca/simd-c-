@@ -6,7 +6,7 @@
     {
       "type": "shell",
       "label": "C/C++: clang++ build active file",
-      "command": "bazel build --cxxopt='-std=c++2a' //src:simd_out --spawn_strategy=local -c dbg",
+      "command": "bazel test --cxxopt='-std=c++20' --cxxopt=-O0 -c dbg  --test_output=all --spawn_strategy=local //tests:testing",
       "args": [],
       "options": {
         "cwd": "${workspaceFolder}"

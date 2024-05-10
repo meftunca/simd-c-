@@ -1,15 +1,24 @@
 # Use our custom-configured c++ toolchain.
 
-build:clang_config --crosstool_top=//toolchain:clang_suite
+# build:clang_config --crosstool_top=//toolchain:clang_suite
+# # Use --cpu as a differentiator.
 
-# Use --cpu as a differentiator.
+# build:clang_config --cpu=k8
 
-build:clang_config --cpu=k8
+# # Use the default Bazel C++ toolchain to build the tools used during the
+# # build.
 
-# Use the default Bazel C++ toolchain to build the tools used during the
-# build.
-
-build:clang_config --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+# build:clang_config --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
 
 
+# Not needed after https://github.com/bazelbuild/bazel/issues/7260 is closed
 build --incompatible_enable_cc_toolchain_resolution
+
+# Tell Bazel to pass the right flags for llvm-ar, not libtool. Only needed if you are building on darwin.
+# See https://github.com/bazelbuild/bazel/blob/5c75d0acec21459bbb13520817e3806e1507e907/tools/cpp/unix_cc_toolchain_config.bzl#L1000-L1024
+# build --features=-libtool
+
+# build flags simd(not openmp just arm) and parallel flags for clang
+build --cxxopt=-std=c++2b --cxxopt=-march=armv8-a+simd --cxxopt=-O3
+# build --config=gperftools
+# build --define=gperftools_hdrs=/opt/homebrew/Cellar/gperftools/2.15/include --define=gperftools_dir=/opt/homebrew/Cellar/gperftools/2.15

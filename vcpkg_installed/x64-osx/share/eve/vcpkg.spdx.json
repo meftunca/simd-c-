@@ -1,0 +1,132 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/eve-x64-osx-2023.2.15-aa06da8c-c424-4813-8621-de67f61897d0",
+  "name": "eve:x64-osx@2023.2.15 7c3c245f1fcbb202db05768dce0db99ebc2a658de91136a1b015d32a0351d689",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024.03.14"
+    ],
+    "created": "2024-05-03T10:19:18Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-2"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-2",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "eve",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "2023.2.15",
+      "downloadLocation": "git+https://github.com/microsoft/vcpkg@f76e41a1a878a665a45ca3b3eef2c8ec8d406778",
+      "homepage": "https://github.com/jfalcou/eve",
+      "licenseConcluded": "BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "EVE - the Expressive Vector Engine : C++20 SIMD Programming Library",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "eve:x64-osx",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "7c3c245f1fcbb202db05768dce0db99ebc2a658de91136a1b015d32a0351d689",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "BSL-1.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "jfalcou/eve",
+      "downloadLocation": "git+https://github.com/jfalcou/eve@${git_ref}",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "20b55996465fa5016d43cee95541510b6470b2358635b0e269965d3fb43731e83b92bc2df0502fcdfadd31de47f877f22b1c6ae84638f1f3db92c70315cc1b29"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/f76e41a1a878a665a45ca3b3eef2c8ec8d406778/usage",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "930621bf2b8fb2626fc50f35d255fa709ad89577988944f54d12b183d59322a7"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/f76e41a1a878a665a45ca3b3eef2c8ec8d406778/portfile.cmake",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0ae03b6d7c74db1340b73eb9f35c34e756e6925878a2c08166277b0ea5313e89"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/f76e41a1a878a665a45ca3b3eef2c8ec8d406778/vcpkg.json",
+      "SPDXID": "SPDXRef-file-2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6e90f5ebe325e46842647abfce791db1362c44195b4f30d77ca966acc17fd91a"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

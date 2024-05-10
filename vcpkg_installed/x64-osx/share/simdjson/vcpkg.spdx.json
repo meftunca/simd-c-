@@ -1,0 +1,110 @@
+{
+  "$schema": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.2.1/schemas/spdx-schema.json",
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "documentNamespace": "https://spdx.org/spdxdocs/simdjson-x64-osx-3.8.0-59460055-5ee2-436e-9e44-adeafa53f0e3",
+  "name": "simdjson:x64-osx@3.8.0 73bb0ba300a23501b44775dbeb22963ce9068b3a2be0c96be5d9df2b9713e653",
+  "creationInfo": {
+    "creators": [
+      "Tool: vcpkg-2024.03.14"
+    ],
+    "created": "2024-05-03T10:20:14Z"
+  },
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "GENERATES",
+      "relatedSpdxElement": "SPDXRef-binary"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-0"
+    },
+    {
+      "spdxElementId": "SPDXRef-port",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-file-1"
+    },
+    {
+      "spdxElementId": "SPDXRef-binary",
+      "relationshipType": "GENERATED_FROM",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-0",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    },
+    {
+      "spdxElementId": "SPDXRef-file-1",
+      "relationshipType": "CONTAINED_BY",
+      "relatedSpdxElement": "SPDXRef-port"
+    }
+  ],
+  "packages": [
+    {
+      "name": "simdjson",
+      "SPDXID": "SPDXRef-port",
+      "versionInfo": "3.8.0",
+      "downloadLocation": "git+https://github.com/microsoft/vcpkg@7f48b617fe3a457c9e73141e9e382529a558e820",
+      "homepage": "https://simdjson.org/",
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "description": "An extremely fast JSON library that can parse gigabytes of JSON per second",
+      "comment": "This is the port (recipe) consumed by vcpkg."
+    },
+    {
+      "name": "simdjson:x64-osx",
+      "SPDXID": "SPDXRef-binary",
+      "versionInfo": "73bb0ba300a23501b44775dbeb22963ce9068b3a2be0c96be5d9df2b9713e653",
+      "downloadLocation": "NONE",
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "comment": "This is a binary package built by vcpkg."
+    },
+    {
+      "SPDXID": "SPDXRef-resource-1",
+      "name": "simdjson/simdjson",
+      "downloadLocation": "git+https://github.com/simdjson/simdjson@v3.8.0",
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "861993414db004079427f2246cee920e4e152e2b2d82ba153db762c9bbe14df4e495e49de35cde70d0980301df2e2c856ddb142ce618e392077d815a4f30fa7e"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/7f48b617fe3a457c9e73141e9e382529a558e820/portfile.cmake",
+      "SPDXID": "SPDXRef-file-0",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2219178f026d5f36d186fec55936c5f38a06403d5586cf6312ec9983a6e2e7f5"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "fileName": ".//Users/mapletechnologies/.cache/vcpkg/registries/git-trees/7f48b617fe3a457c9e73141e9e382529a558e820/vcpkg.json",
+      "SPDXID": "SPDXRef-file-1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c4cef221ba660e14d46484e1c6a922a063d335a34bbda1255f22dfe8a00ea15d"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ]
+}

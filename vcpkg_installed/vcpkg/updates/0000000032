@@ -1,0 +1,9 @@
+Package: fast-float
+Version: 6.1.0
+Port-Version: 1
+Depends: vcpkg-cmake:arm64-osx, vcpkg-cmake-config:arm64-osx
+Architecture: x64-osx
+Multi-Arch: same
+Abi: 71ef2c0f6fdbe7e87f043e78ce9fb78d72307ed0e18c19ae706f85e326018d72
+Description: Fast and exact implementation of the C++ from_chars functions for float and double types: 4x faster than strtod
+Status: install ok half-installed

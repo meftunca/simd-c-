@@ -8,6 +8,8 @@
 #  include "sse41.hpp"
 #elif defined(__SSE2__)
 #  include "sse42.hpp"
-#elif
-
+#elif defined(__ARM_NEON__)
+#  include "armneon.hpp"
+#else
+#  include "stdranges.hpp"
 #endif

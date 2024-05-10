@@ -1,56 +1,89 @@
 // read file from disk
 import fs from "node:fs";
+import process from "node:process";
+import * as Bun from "bun"
 
-const renderJSON = async (path: string) => {
-  const file = fs.readFileSync(path, "utf-8");
+Bun.gc(false);
 
-  let count = 0;
-  const now = Date.now();
-  while (Date.now() - now < 1000) {
-    JSON.parse(file);
-    count++;
-  }
-  const last = Date.now() - now;
+type ResponseBench = {
+  path: string;
+  count: number;
+  fileSize: number | string;
+  processingSize: string;
+  time: string;
+  memory: string;
+  cpu: string;
+}
 
-  // size to humanize
-  const size = file.length * count;
-  const i = Math.floor(Math.log(size) / Math.log(1024));
-  const humanSize =
-    (size / Math.pow(1024, i)).toFixed(2) +
+const toHumanUsage = (bytes: number) => {
+  const i = Math.floor(Math.log(bytes) / Math.log(1024));
+  return (
+    (bytes / Math.pow(1024, i)).toFixed(2) +
     " " +
-    ["B", "kB", "MB", "GB", "TB", "PB"][i];
+    ["B", "kB", "MB", "GB", "TB", "PB"][i]
+  );
+};
+const renderJSON = async (path: string) => {
+  try {
+    let response = {} as ResponseBench;
+    let count = 0;
+    const now = Date.now();
+    const beforeMemUsage = process.memoryUsage.rss();
+    const beforeCpuUsage = process.cpuUsage().user;
+    const file = Bun.file(path, { type: "application/json" });
 
-  // Log
-  console.table({
-    path,
-    count,
-    size,
-    humanSize,
-    time: last + "ms",
-  });
-  // console.log(`Parsed ${count} times in 1 second`);
-  // // size
-  // console.log(
-  //   `Size: ${file.length} bytes, total rendered bytes ${
-  //     file.length * count
-  //   } and ${humanSize}`
-  // );
+    while (Date.now() - now < 1000) {
+      // JSON.parse(fileContent);
+      await file.json()
+
+      count++;
+    }
+    const afterMemUsage = process.memoryUsage.rss();
+    const afterCpuUsage = process.cpuUsage().user;
+    const last = Date.now() - now;
+
+    // size to humanize
+    const fileSize = file.size
+    const size = fileSize * count;
+    const humanSize = toHumanUsage(size);
+    response = {
+      path,
+      count,
+      fileSize: toHumanUsage(fileSize),
+      processingSize: humanSize,
+      time: (count / last).toFixed(2) + " op/ms",
+      memory: toHumanUsage(afterMemUsage - beforeMemUsage),
+      cpu: `${((100 * last) / (afterCpuUsage - beforeCpuUsage)).toFixed(3)}%`,
+    };
+
+    return response;
+  } catch (error) {
+    console.error(path, error);
+  }
+
+
 };
 
 const main = async () => {
   // read folder in file list
   const files = fs.readdirSync("./bulker");
-
+  const responseList: ResponseBench[] = [];
   // loop through files
-  for (const file of files) {
+  for await (const file of files) {
     if (!file.endsWith(".json")) continue;
     // render json
     try {
-      await renderJSON("./bulker/" + file);
+      const response = await renderJSON("./bulker/" + file);
+      if (!response) continue;
+      responseList.push(response);
     } catch (error) {
-      console.log(file, error);
+      console.error(file, error);
     }
   }
+  console.table(responseList);
+  // console.table(arrayToTSV(responseList));
+
 };
+
 
 await main();

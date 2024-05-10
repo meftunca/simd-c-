@@ -1,37 +1,48 @@
-load("@rules_cc//cc:defs.bzl", "cc_library","cc_binary")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 
 cc_library(
-    name = "simd",
-    hdrs = glob(["*.hh","*.h","*.hpp"]),
+    name = "bon_lib",
+    hdrs = glob([
+        "**/*.hh",
+        "**/*.h",
+        "**/*.hpp",
+    ]),
+    copts = [
+        # "-Ofast",
+        "-O0",
+        "-DNEDBUG",
+        "-std=c++2b",
+        "-lprofiler",
+        # "-march=armv8.5-a",
+        # "-mfpu=neon",
+        #  inline
+        # "-finline-functions",
+        # "-fno-inline-functions-called-once",
+        # # vectorize
+        # "-ftree-vectorize",
+    ],
     visibility = ["//visibility:public"],
     deps = [
-        "@simdjson",
+        # "@gperftools//:tcmalloc",
+        # "@gperftools//:profiler",
+        # "@gperftools//:heap-checker",
         # "@sonic_json",
         # "@fast_float",
-        "@lz4",
-        "@eve",
-        "@mio",
-        "@nlohmann_json//:json",
-        # "@taocpp-pegtl",
+        # "@eve",
+        # "@mio",
+        # "@lz4",
     ],
-    copts=[
-        # "-march=native",
-        "-O3",
-        "-DNEDBUG",
-        "-std=c++20",
-        # "-fcoroutines",
-        # "-fcoroutines-ts",
-        # "-fconcepts",
-        # "--stdlib=libc++",
-        ]
-
 )
 
 # https://docs.bazel.build/versions/master/be/c-cpp.html#cc_binary
 cc_binary(
-    name = "simd_out",
+    name = "bon",
     srcs = ["main.cc"],
     copts = [],
-    deps = ["//eve:eve",  "//src:simd"],
-
+    deps = [
+        "//src:bon_lib",
+        # "@gperftools//:heap-checker",
+        # "@gperftools//:profiler",
+        # "@gperftools//:tcmalloc",
+    ],
 )

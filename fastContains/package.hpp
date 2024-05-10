@@ -2,17 +2,15 @@
 #define FAST_CONTAINS_PACKAGE_HPP
 #include "simd.hpp"
 
-struct faster
-{
-  uint8_t                                 *data;
-  size_t                                   size;
-  __attribute((always_inline)) inline bool check(uint8_t value);
+struct Faster {
+  uint8_t* data;
+  size_t size;
+  [[nodiscard]] __attribute((always_inline)) inline bool check(
+      uint8_t value) const;
 };
 
-__attribute((always_inline)) inline bool
-faster::check(uint8_t value)
-{
-  return contains(data, value, size);
+__attribute((always_inline)) inline bool Faster::check(uint8_t value) const {
+  return contains(data, value);
 }
 
 #endif

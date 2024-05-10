@@ -1,28 +1,19 @@
-#if defined(__ARM_NEON__)
-#  include <stdint.h>
+#include <arm_neon.h>
+#include <cstddef>
 
-#  include <arm_neon.h>
+// // amaç: simd ile bir dizi içerisinde bir değerin olup olmadığını en hızlı şekilde bulmak
+inline bool contains(const uint8_t* data, uint8_t& target) {
+  // if (__has_feature(arm_neon)) {
+  //   printf("ARM Neon SIMD instructions are supported.\n");
+  // } else {
+  //   printf("ARM Neon SIMD instructions are not supported.\n");
+  // }
+  auto v_array = vld1q_u16(reinterpret_cast<const uint16_t*>(data));
 
-bool
-contains(const uint8_t *data, uint8_t value, size_t size)
-{
-  uint8x16_t     needle = vdupq_n_u8(value);
-  const uint8_t *end    = data + size;
+  // Compare the array with the character.
+  auto v_result = vceqq_u16(v_array, vdupq_n_u16(target));
 
-  for( ; data + 16 <= end; data += 16 )
-  {
-    uint8x16_t haystack = vld1q_u8(data);
-    uint8x16_t cmp      = vceqq_u8(haystack, needle);
-    uint64x2_t mask     = vreinterpretq_u64_u8(cmp);
-    if( vgetq_lane_u64(mask, 0) != 0 || vgetq_lane_u64(mask, 1) != 0 ) { return true; }
-  }
-
-  for( ; data < end; ++data )
-  {
-    if( *data == value ) { return true; }
-  }
-
-  return false;
+  // Count the number of 1 bits in the result.
+  uint32_t count = vgetq_lane_u32(vcntq_u8(v_result), 0);
+  return count > 0;
 }
-
-#endif

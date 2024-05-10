@@ -1,0 +1,48 @@
+load("@rules_cc//cc:defs.bzl", "cc_import", "cc_library")
+
+# Components precompiled libs
+cc_import(
+    name = "zstd_precompiled",
+    static_library = "lib/libzstd.a",
+)
+
+# Root package precompiled libs
+
+# Components libraries declaration
+cc_library(
+    name = "zstd-zstdlib",
+    hdrs = glob([
+        "include/**",
+    ]),
+    includes = [
+        "include",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":zstd_precompiled",
+    ],
+)
+
+# Package library declaration
+cc_library(
+    name = "zstd",
+    hdrs = glob([
+        "include/**",
+    ]),
+    includes = [
+        "include",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":zstd-zstdlib",
+    ],
+)
+
+# Filegroup library declaration
+filegroup(
+    name = "zstd_binaries",
+    srcs = glob([
+        "bin/**",
+    ]),
+    visibility = ["//visibility:public"],
+)
